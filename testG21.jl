@@ -1,5 +1,8 @@
 include("config.jl")
 
+#### Code for checking things about G21. Builds G21 from the vector clumps in clumps.jld2 and checks that its orthogonal rank is 5. ####
+
+
 import Pkg
 Pkg.activate(koala_path)
 using Koala
@@ -93,6 +96,6 @@ println("Checking that G_{21}'s chromatic number is indeed 5, as a sanity check.
 @assert compute_chromatic_number(G21) == 5
 
 println("Proving that G21 has no 4-dimensional orthogonal representation...")
-total_time = @elapsed ok, tot = prove_no_representation_exists(G21,4) # ok is whether the proof succeeded, tot is the number of evaluations of xi_SDP
+total_time = @elapsed ok, tot = prove_no_representation_exists(G21,4) # ok encodes whether the proof succeeded, tot is the number of evaluations of xi_SDP
 @assert ok
 println("Proof complete, evaluated xi_SDP $(tot) times, took $(total_time) seconds.")

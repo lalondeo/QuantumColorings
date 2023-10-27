@@ -1,3 +1,5 @@
+### Code for running the testing pipeline on edge-critical graphs
+
 include("config.jl")
 
 import Pkg

@@ -1,0 +1,1 @@
+Code in support of the paper "On the quantum chromatic numbers of small graphs". 
